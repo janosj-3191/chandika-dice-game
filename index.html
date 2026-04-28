@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Oldest Revenge Story — The Dice Game</title>
+<title>The Oldest Revenge Story: The Dice Game</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Cinzel:wght@400;600&display=swap');
 
@@ -38,7 +38,6 @@ body {
   margin-bottom: 1.8rem;
 }
 
-/* DIALOGUE BOX */
 #dialogue-box {
   width: 100%;
   background: #1a1208;
@@ -58,89 +57,23 @@ body {
   margin-bottom: 8px;
 }
 
-.speech {
-  font-style: italic;
-  font-size: 18px;
-  line-height: 1.7;
-}
-
+.speech { font-style: italic; font-size: 18px; line-height: 1.7; }
 .speech.chandi-speech { color: #fff5e0; }
 .speech.victor-speech { color: #f0c060; }
 
-/* ROUND TRACKER */
-.round-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 1.6rem;
-}
-
-.round-label {
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: #5a4020;
-  text-transform: uppercase;
-}
-
-.round-pip {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1.5px solid #3a2810;
-  background: #1a1208;
-  transition: all 0.5s;
-}
-
+.round-row { display: flex; align-items: center; gap: 12px; margin-bottom: 1.6rem; }
+.round-label { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 3px; color: #5a4020; text-transform: uppercase; }
+.round-pip { width: 12px; height: 12px; border-radius: 50%; border: 1.5px solid #3a2810; background: #1a1208; transition: all 0.5s; }
 .round-pip.done { background: #c8922a; border-color: #f0c060; box-shadow: 0 0 8px rgba(200,146,42,0.5); }
 .round-pip.active { border-color: #f0d080; background: #3a2810; }
 
-/* ARENA */
-.arena {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  width: 100%;
-  margin-bottom: 1.8rem;
-  justify-content: center;
-}
-
-.player-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  flex: 1;
-  max-width: 200px;
-}
-
-.p-name {
-  font-family: 'Cinzel', serif;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-
+.arena { display: flex; align-items: flex-start; gap: 2rem; width: 100%; margin-bottom: 1.8rem; justify-content: center; }
+.player-col { display: flex; flex-direction: column; align-items: center; gap: 10px; flex: 1; max-width: 200px; }
+.p-name { font-family: 'Cinzel', serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; }
 .p-name.chandi-name { color: #e8d5b0; }
 .p-name.victor-name { color: #f0c060; }
-
 .dice-wrap { position: relative; width: 90px; height: 90px; }
-
-.dice {
-  width: 90px;
-  height: 90px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Cinzel', serif;
-  font-size: 38px;
-  font-weight: 600;
-  transition: all 0.4s;
-  position: absolute;
-  top: 0; left: 0;
-}
-
+.dice { width: 90px; height: 90px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-family: 'Cinzel', serif; font-size: 38px; font-weight: 600; transition: all 0.4s; position: absolute; top: 0; left: 0; }
 .dice.cd { background: #f5ede0; color: #1a0e04; border: 2.5px solid #c09050; }
 .dice.vd { background: #2a1e0a; color: #f0c060; border: 2.5px solid #c8922a; }
 .dice.win-flash { box-shadow: 0 0 32px rgba(240,192,96,0.7); transform: scale(1.1); }
@@ -154,213 +87,43 @@ body {
   100% { transform: rotate(0) scale(1); }
 }
 .tumbling { animation: tumble 0.55s ease; }
+.guess-tag { font-size: 14px; font-style: italic; color: #8a6838; min-height: 20px; text-align: center; }
+.vs-col { display: flex; flex-direction: column; align-items: center; justify-content: center; padding-top: 28px; }
+.vs { font-family: 'Cinzel', serif; font-size: 20px; color: #4a3418; letter-spacing: 2px; }
 
-.guess-tag {
-  font-size: 14px;
-  font-style: italic;
-  color: #8a6838;
-  min-height: 20px;
-  text-align: center;
-}
+.pick-section { width: 100%; text-align: center; margin-bottom: 1.4rem; }
+.pick-hint { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 3px; color: #8a6838; text-transform: uppercase; margin-bottom: 14px; }
+.num-row { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-.vs-col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 28px;
-}
+.nb { width: 58px; height: 58px; border-radius: 10px; border: 2px solid #c8922a; background: #2e1e08; color: #f5e0a0; font-family: 'Cinzel', serif; font-size: 24px; font-weight: 600; cursor: pointer; transition: all 0.15s; display: flex; align-items: center; justify-content: center; }
+.nb:hover:not(:disabled) { background: #4a3010; border-color: #f0c060; color: #ffffff; transform: translateY(-3px); box-shadow: 0 6px 20px rgba(200,146,42,0.35); }
+.nb.sel { background: #c8922a; color: #0e0b07; border-color: #f5e0a0; transform: translateY(-3px) scale(1.12); box-shadow: 0 6px 24px rgba(200,146,42,0.5); }
+.nb:disabled { opacity: 0.2; cursor: not-allowed; transform: none; box-shadow: none; }
 
-.vs {
-  font-family: 'Cinzel', serif;
-  font-size: 20px;
-  color: #4a3418;
-  letter-spacing: 2px;
-}
-
-/* NUMBER PICKER */
-.pick-section {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 1.4rem;
-}
-
-.pick-hint {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: #8a6838;
-  text-transform: uppercase;
-  margin-bottom: 14px;
-}
-
-.num-row {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* HIGH CONTRAST NUMBER BUTTONS */
-.nb {
-  width: 58px;
-  height: 58px;
-  border-radius: 10px;
-  border: 2px solid #c8922a;
-  background: #2e1e08;
-  color: #f5e0a0;
-  font-family: 'Cinzel', serif;
-  font-size: 24px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.nb:hover:not(:disabled) {
-  background: #4a3010;
-  border-color: #f0c060;
-  color: #ffffff;
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(200,146,42,0.35);
-}
-
-.nb.sel {
-  background: #c8922a;
-  color: #0e0b07;
-  border-color: #f5e0a0;
-  transform: translateY(-3px) scale(1.12);
-  box-shadow: 0 6px 24px rgba(200,146,42,0.5);
-}
-
-.nb:disabled {
-  opacity: 0.2;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
-}
-
-/* ROLL BUTTON */
-#roll-btn {
-  font-family: 'Cinzel', serif;
-  font-size: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  background: transparent;
-  border: 1.5px solid #c8922a;
-  color: #f0c060;
-  padding: 14px 50px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-radius: 4px;
-  margin-bottom: 1.6rem;
-  font-weight: 600;
-}
-
-#roll-btn:hover:not(:disabled) {
-  background: #c8922a;
-  color: #0e0b07;
-  box-shadow: 0 4px 20px rgba(200,146,42,0.4);
-}
-
+#roll-btn { font-family: 'Cinzel', serif; font-size: 12px; letter-spacing: 4px; text-transform: uppercase; background: transparent; border: 1.5px solid #c8922a; color: #f0c060; padding: 14px 50px; cursor: pointer; transition: all 0.2s; border-radius: 4px; margin-bottom: 1.6rem; font-weight: 600; }
+#roll-btn:hover:not(:disabled) { background: #c8922a; color: #0e0b07; box-shadow: 0 4px 20px rgba(200,146,42,0.4); }
 #roll-btn:disabled { opacity: 0.2; cursor: not-allowed; }
 
-/* EXILE SCREEN */
-#exile {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.4rem;
-  text-align: center;
-  width: 100%;
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-
+#exile { display: none; flex-direction: column; align-items: center; gap: 1.4rem; text-align: center; width: 100%; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 .exile-inner { animation: fadeUp 1.4s ease forwards; display: flex; flex-direction: column; align-items: center; gap: 1.4rem; }
-
-.exile-tag {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
-  letter-spacing: 5px;
-  color: #8a6838;
-  text-transform: uppercase;
-}
-
-.exile-deal {
-  font-style: italic;
-  font-size: 60px;
-  color: #f5ede0;
-  line-height: 1;
-}
-
-.exile-verse {
-  font-style: italic;
-  font-size: 17px;
-  color: #9a7a40;
-  max-width: 380px;
-  line-height: 1.8;
-}
-
-.board {
-  background: #0a0704;
-  border: 1.5px solid #3a2810;
-  border-radius: 8px;
-  padding: 1.2rem 2rem;
-  width: 100%;
-  max-width: 360px;
-}
-
-.board-top {
-  font-family: 'Cinzel', serif;
-  font-size: 9px;
-  letter-spacing: 4px;
-  color: #5a4020;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #2a1e0a;
-  padding-bottom: 8px;
-  text-align: left;
-}
-
+.exile-tag { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 5px; color: #8a6838; text-transform: uppercase; }
+.exile-deal { font-style: italic; font-size: 60px; color: #f5ede0; line-height: 1; }
+.exile-verse { font-style: italic; font-size: 17px; color: #9a7a40; max-width: 380px; line-height: 1.8; }
+.board { background: #0a0704; border: 1.5px solid #3a2810; border-radius: 8px; padding: 1.2rem 2rem; width: 100%; max-width: 360px; }
+.board-top { font-family: 'Cinzel', serif; font-size: 9px; letter-spacing: 4px; color: #5a4020; text-transform: uppercase; margin-bottom: 12px; border-bottom: 1px solid #2a1e0a; padding-bottom: 8px; text-align: left; }
 .board-row { display: flex; gap: 2.5rem; }
 .bc { display: flex; flex-direction: column; gap: 5px; }
 .bc-l { font-size: 9px; letter-spacing: 2px; color: #5a4020; text-transform: uppercase; font-family: 'Cinzel', serif; }
 .bc-v { font-size: 20px; color: #f0c060; font-family: 'Cinzel', serif; letter-spacing: 1px; }
-
-.exile-bottom {
-  font-style: italic;
-  font-size: 16px;
-  color: #6a5030;
-  max-width: 380px;
-  line-height: 1.9;
-}
-
-.again-btn {
-  font-family: 'Cinzel', serif;
-  font-size: 10px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  background: transparent;
-  border: 1px solid #3a2810;
-  color: #8a6838;
-  padding: 11px 32px;
-  cursor: pointer;
-  transition: all 0.2s;
-  border-radius: 4px;
-}
-
+.exile-bottom { font-style: italic; font-size: 16px; color: #6a5030; max-width: 380px; line-height: 1.9; }
+.again-btn { font-family: 'Cinzel', serif; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; background: transparent; border: 1px solid #3a2810; color: #8a6838; padding: 11px 32px; cursor: pointer; transition: all 0.2s; border-radius: 4px; }
 .again-btn:hover { border-color: #c8922a; color: #f0c060; }
 </style>
 </head>
 <body>
 <div id="wrap">
-  <div class="scene-label">The Oldest Revenge Story &nbsp;·&nbsp; Part I — Chandi</div>
+  <div class="scene-label">The Oldest Revenge Story &nbsp;·&nbsp; Part I · Chandi</div>
 
   <div id="dialogue-box">
     <div class="speaker" id="spk">Victor</div>
@@ -390,7 +153,7 @@ body {
     </div>
 
     <div class="pick-section">
-      <div class="pick-hint">Choose your number — then roll</div>
+      <div class="pick-hint">Choose your number, then roll</div>
       <div class="num-row" id="nums">
         <button class="nb" onclick="pick(1,this)">1</button>
         <button class="nb" onclick="pick(2,this)">2</button>
@@ -410,9 +173,9 @@ body {
     <div class="exile-inner">
       <div class="exile-tag">The Game is Over</div>
       <div class="exile-deal">"Deal."</div>
-      <div class="exile-verse">"A lonely daughter in exile — for that to me is a fate worse than death for challenging me."</div>
+      <div class="exile-verse">"A lonely daughter in exile, for that to me is a fate worse than death for challenging me."</div>
       <div class="board">
-        <div class="board-top">Departures &nbsp;—&nbsp; JFK International</div>
+        <div class="board-top">Departures &nbsp;·&nbsp; JFK International</div>
         <div class="board-row">
           <div class="bc"><div class="bc-l">Flight</div><div class="bc-v">AI 101</div></div>
           <div class="bc"><div class="bc-l">To</div><div class="bc-v">INDIA</div></div>
@@ -428,22 +191,22 @@ body {
 <script>
 const rounds = [
   {
-    victorLine:   { spk:"Victor", cls:"victor-speech", txt:"You see that dice in the corner of the room? I'll throw it, and before the number shows, we will both guess. Whoever guesses closest will win. Are you sure you want to play?" },
-    chandiReply:  { spk:"Chandi", cls:"chandi-speech", txt:"Roll the dice, Victor." },
-    loseLine:     { spk:"Victor", cls:"victor-speech", txt:"Look, I have won! Looks like your life is now mine." },
-    protestLine:  { spk:"Chandi", cls:"chandi-speech", txt:"LIAR! You have used some means of deceit. I demand a rematch!" }
+    victorLine:  { spk:"Victor", cls:"victor-speech", txt:"You see that dice in the corner of the room? I'll throw it, and before the number shows, we will both guess. Whoever guesses closest will win. Are you sure you want to play?" },
+    chandiReply: { spk:"Chandi", cls:"chandi-speech", txt:"Roll the dice, Victor." },
+    loseLine:    { spk:"Victor", cls:"victor-speech", txt:"Look, I have won! Looks like your life is now mine." },
+    protestLine: { spk:"Chandi", cls:"chandi-speech", txt:"LIAR! You have used some means of deceit. I demand a rematch!" }
   },
   {
-    victorLine:   { spk:"Victor", cls:"victor-speech", txt:"Alright, so be it." },
-    chandiReply:  null,
-    loseLine:     { spk:"Victor", cls:"victor-speech", txt:"Look, I have won again! Looks like you must give up, Chandi." },
-    protestLine:  { spk:"Chandi", cls:"chandi-speech", txt:"NO. You have cheated again. The conditions must be fair. I will play — but on different terms." }
+    victorLine:  { spk:"Victor", cls:"victor-speech", txt:"Alright, so be it." },
+    chandiReply: null,
+    loseLine:    { spk:"Victor", cls:"victor-speech", txt:"Look, I have won again! Looks like you must give up, Chandi." },
+    protestLine: { spk:"Chandi", cls:"chandi-speech", txt:"NO. You have cheated again. The conditions must be fair. I will play, but on different terms." }
   },
   {
-    victorLine:   { spk:"Victor", cls:"victor-speech", txt:"Very well. If you win — freedom. If I win — you are free, but you may never speak to your family again. A lonely daughter in exile. Do you accept?" },
-    chandiReply:  { spk:"Chandi", cls:"chandi-speech", txt:"Deal." },
-    loseLine:     { spk:"Victor", cls:"victor-speech", txt:"Look, I have won again!" },
-    protestLine:  null
+    victorLine:  { spk:"Victor", cls:"victor-speech", txt:"Very well. If you win, freedom. If I win, you are free, but you may never speak to your family again. A lonely daughter in exile. Do you accept?" },
+    chandiReply: { spk:"Chandi", cls:"chandi-speech", txt:"Deal." },
+    loseLine:    { spk:"Victor", cls:"victor-speech", txt:"Look, I have won again!" },
+    protestLine: null
   }
 ];
 
@@ -479,7 +242,6 @@ function roll() {
   busy = true;
   document.getElementById('roll-btn').disabled = true;
   document.querySelectorAll('.nb').forEach(b => b.disabled = true);
-
   const cd = document.getElementById('cd');
   const vd = document.getElementById('vd');
   cd.className = 'dice cd tumbling';
@@ -487,34 +249,26 @@ function roll() {
   cd.textContent = '?'; vd.textContent = '?';
   document.getElementById('cg').textContent = '';
   document.getElementById('vg').textContent = '';
-
   setTimeout(() => {
     cd.classList.remove('tumbling');
     vd.classList.remove('tumbling');
-
     const vicGuess = chosen === 6 ? 5 : 6;
     const landed = vicGuess;
-
     cd.textContent = landed;
     vd.textContent = landed;
     document.getElementById('cg').textContent = 'you guessed ' + chosen;
     document.getElementById('vg').textContent = 'Victor guessed ' + vicGuess;
     cd.className = 'dice cd lose-fade';
     vd.className = 'dice vd win-flash';
-
     const r = rounds[round];
     setDialogue(r.loseLine.spk, r.loseLine.cls, r.loseLine.txt);
-
     document.getElementById('p' + round).classList.remove('active');
     document.getElementById('p' + round).classList.add('done');
-
     if (round === 2) {
       setTimeout(showExile, 2200);
     } else {
       setTimeout(() => {
-        if (r.protestLine) {
-          setDialogue(r.protestLine.spk, r.protestLine.cls, r.protestLine.txt);
-        }
+        if (r.protestLine) setDialogue(r.protestLine.spk, r.protestLine.cls, r.protestLine.txt);
         setTimeout(() => {
           round++;
           document.getElementById('p' + round).classList.add('active');
@@ -540,10 +294,7 @@ function showExile() {
 
 function resetAll() {
   round = 0; chosen = null; busy = false; phase = 'intro';
-  for (let i = 0; i < 3; i++) {
-    const p = document.getElementById('p' + i);
-    p.classList.remove('done', 'active');
-  }
+  for (let i = 0; i < 3; i++) document.getElementById('p' + i).classList.remove('done', 'active');
   document.getElementById('p0').classList.add('active');
   document.getElementById('cd').className = 'dice cd'; document.getElementById('cd').textContent = '?';
   document.getElementById('vd').className = 'dice vd'; document.getElementById('vd').textContent = '?';
